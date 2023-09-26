@@ -14,11 +14,7 @@ class NumberDisplayAdapter(private val numbers: Array<Int>): RecyclerView.Adapte
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NumberViewHolder {
         return NumberViewHolder(
-            TextView(
-                parent.context
-            ).apply{
-                layoutParams = ViewGroup.LayoutParams(350,350)
-            }
+            TextView(parent.context).apply{layoutParams = ViewGroup.LayoutParams(350,350)}
         )
     }
 
@@ -27,7 +23,7 @@ class NumberDisplayAdapter(private val numbers: Array<Int>): RecyclerView.Adapte
     }
 
     override fun onBindViewHolder(holder: NumberViewHolder, position: Int) {
-        holder._textView.setText(numbers.toString())
+        holder._textView.setText(numbers[position].toString())
     }
 
     //Step 3b: Complete function definitions for adapter
